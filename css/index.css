@@ -9,6 +9,8 @@
 
 body {
   overflow-x: hidden;
+  height: 100vh;
+  width: 100vw;
 }
 
 .min-width {
@@ -164,7 +166,7 @@ main {
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
-  margin-bottom: 100px
+  margin-bottom: 100px;
 }
 
 .about-heading {
@@ -212,10 +214,10 @@ main {
   font-weight: 800;
 }
 
-.links{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 .links-list {
   list-style-type: disc;
@@ -235,7 +237,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
+  align-items: center;
   gap: 20px;
 }
 .address-footer {
@@ -276,35 +278,42 @@ main {
   display: none;
 }
 
-
 /* slider section  */
 
-.slider{
+.slider {
   background-color: black;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
   width: 100%;
-  position: absolute;
-  top: 0;
-  right: calc(110vw);
   z-index: 4;
 }
 
-.close-icon{
-  position: absolute;
-  width: 25px;
-  top: 40px;
-  right: 20px;
+.slider.active {
+  display: flex;
 }
 
-.slider-option{
+.all {
+  display: block;
+}
+
+.all.inactive {
+  display: none;
+}
+
+.close-icon {
+  position: absolute;
+  width: 35px;
+  top: 2rem;
+  right: 2rem;
+}
+
+.slider-option {
   font-size: 40px;
   cursor: pointer;
 }
-
 
 /* responsive */
 
@@ -361,7 +370,7 @@ main {
     width: 300px;
   }
 
-  .contacts{
+  .contacts {
     align-items: start;
   }
   .contact-button {
@@ -431,22 +440,19 @@ main {
     font-size: larger;
   }
 
-  .find-us{
+  .find-us {
     position: relative;
     bottom: 80px;
   }
 
-  .email{
+  .email {
     position: relative;
     left: 140px;
     bottom: 80px;
   }
 
-  .social-2{
+  .social-2 {
     left: 140px;
     bottom: 180px;
   }
-
 }
-
-

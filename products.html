@@ -12,9 +12,11 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <script src="./js/index.js"></script>
     <title>Products</title>
   </head>
   <body class="min-width-2">
+    <div class="all">
     <!-- Header  -->
     <header class="heading min-width">
       <nav class="navbar">
@@ -190,10 +192,10 @@
 
       <div class="contacts">
         <span class="footer-title">Contacts</span>
-        <a href="#" class="link" target="_blank"
+        <a href="tel:+9779898989898" class="link" target="_blank"
           ><button class="contact-button">Call Now</button></a
         >
-        <a href="#" class="link" target="_blank"
+        <a href="mailto:sweetz@gmail.com" class="link" target="_blank"
           ><button class="contact-button email">Email Now</button></a
         >
         <a
@@ -222,16 +224,36 @@
         </div>
       </div>
     </footer>
+  </div>
 
     <!-- Slider  -->
     <section class="slider">
-        <img src="./images/close_icon.webp" alt="" class="close-icon" />
-        <a href="index.html" class="link"
-          ><span class="slider-option">Home</span></a
-        >
-        <a href="products.html" class="link"
-          ><span class="slider-option">Products</span></a
-        >
-      </section>
+      <img src="./images/close_icon.webp" alt="" class="close-icon" />
+      <a href="index.html" class="link"
+        ><span class="slider-option">Home</span></a
+      >
+      <a href="products.html" class="link"
+        ><span class="slider-option">Products</span></a
+      >
+    </section>
   </body>
+  <script>
+    const menuIcon = document.querySelector(".menu-icon");
+    const closeIcon = document.querySelector(".close-icon");
+    const slider = document.querySelector(".slider");
+    const all = document.querySelector(".all");
+
+    menuIcon.addEventListener("click", () => {
+      slider.classList.add("active");
+      all.classList.add("inactive");
+      console.log("clicked");
+      closeIcon.classList.add("active");
+    });
+
+    closeIcon.addEventListener("click", () => {
+      slider.classList.remove("active");
+      closeIcon.classList.remove("active");
+      all.classList.remove("inactive");
+    });
+  </script>
 </html>
