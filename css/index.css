@@ -280,29 +280,38 @@ main {
 
 /* slider section  */
 
-.slider {
+/* .slider {
   background-color: black;
   display: none;
-  flex-direction: column;
+    flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100%;
   z-index: 4;
   overflow-x: hidden;
+} */
+
+.slider {
+  position: fixed;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 100%;
+  background: black;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 101;
+  transition: all 500ms ease;
 }
 
 .slider.active {
-  display: flex;
+  left: 0%;
+  overflow: hidden;
 }
 
-.all {
-  display: block;
-}
-
-.all.inactive {
-  display: none;
-}
 
 .close-icon {
   position: absolute;
