@@ -280,20 +280,8 @@ main {
 
 /* slider section  */
 
-/* .slider {
-  background-color: black;
-  display: none;
-    flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100%;
-  z-index: 4;
-  overflow-x: hidden;
-} */
-
 .slider {
-  position: absolute;
+  position: fixed;
   display: flex;
   height: 100%;
   width: 100%;
@@ -305,14 +293,11 @@ main {
   justify-content: center;
   z-index: 200;
   transition: all 500ms ease;
+  overflow-y: hidden;
 }
 
 .slider.active {
   left: 0%;
-}
-
-.all.inactive {
-  display: none;
 }
 
 .close-icon {
