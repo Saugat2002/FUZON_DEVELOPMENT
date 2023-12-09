@@ -62,7 +62,7 @@ products.forEach(function (product) {
             </div>
         </div>
         <div class="popup-buttons">
-            <button class="proceed popup-button" onclick="proceedCheckout()">Proceed</button>
+            <button class="proceed popup-button" onclick="proceedCheckout(${totalPrice + 50})">Proceed</button>
             <button class="close popup-button" onclick="closed()">Close</button>
         </div>
     `;
@@ -74,7 +74,30 @@ products.forEach(function (product) {
         blur.classList.add('active');
 
     });
+
 });
+
+function proceedCheckout(amt) {
+    var amount = amt;
+    var taxAmount = 0;
+    var totalAmount = amount + taxAmount;
+    var transactionUUID = "T" + Math.floor((Math.random() * 1000000000) + 1);
+    const productCode = "EPAYTEST";
+
+
+    document.getElementById("amount").value = amount;
+    document.getElementById("tax_amount").value = taxAmount;
+    document.getElementById("total_amount").value = totalAmount;
+    document.getElementById("transaction_uuid").value = transactionUUID;
+    
+    var data = "total_amount=" + totalAmount + ",transaction_uuid=" + transactionUUID + ",product_code=" + productCode;
+    var hash = CryptoJS.HmacSHA256(data, "8gBm/:&EnhH.1/q");
+    var hashInBase64 = CryptoJS.enc.Base64.stringify(hash);
+    console.log(hashInBase64);
+    var signature = hashInBase64;
+    document.getElementById("signature").value = signature;
+    document.getElementById("paymentForm").submit();
+}
 
 function closed() {
     let checkoutContainer = document.querySelector('.checkout');
@@ -83,10 +106,4 @@ function closed() {
     blur.classList.remove('active');
 }
 
-function proceedCheckout() {
-    let checkoutContainer = document.querySelector('.checkout');
-    checkoutContainer.style.display = 'none';
-    let blur = document.querySelector('.blur');
-    blur.classList.remove('active');
-    alert('Your order has been placed successfully!');
-}
+

@@ -286,7 +286,74 @@
         ><span class="slider-option">Products</span></a
       >
     </section>
+
+    <form
+      id="paymentForm"
+      action="https://rc-epay.esewa.com.np/api/epay/main/v2/form"
+      method="POST"
+      style="display: none"
+      target="_blank"
+    >
+      <input type="text" id="amount" name="amount" value="100" />
+      <input type="text" id="tax_amount" name="tax_amount" value="0" />
+      <input type="text" id="total_amount" name="total_amount" value="100" />
+      <input
+        type="text"
+        id="transaction_uuid"
+        name="transaction_uuid"
+        value=""
+      />
+      <input
+        type="text"
+        id="product_code"
+        name="product_code"
+        value="EPAYTEST"
+      />
+      <input
+        type="text"
+        id="product_service_charge"
+        name="product_service_charge"
+        value="0"
+      />
+      <input
+        type="text"
+        id="product_delivery_charge"
+        name="product_delivery_charge"
+        value="0"
+      />
+      <input
+        type="text"
+        id="success_url"
+        name="success_url"
+        value="https://esewa.com.np"
+      />
+      <input
+        type="text"
+        id="failure_url"
+        name="failure_url"
+        value="https://google.com"
+      />
+      <input
+        type="text"
+        id="signed_field_names"
+        name="signed_field_names"
+        value="total_amount,transaction_uuid,product_code"
+      />
+      <input
+        type="text"
+        id="signature"
+        name="signature"
+        value=""
+      />
+      <!-- Replace with your generated signature -->
+    </form>
   </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1
+/crypto-js.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1
+/hmac-sha256.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1
+/enc-base64.min.js"></script>
   <script>
     const menuIcon = document.querySelector(".menu-icon");
     const closeIcon = document.querySelector(".close-icon");
