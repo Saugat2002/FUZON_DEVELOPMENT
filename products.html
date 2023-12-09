@@ -291,10 +291,11 @@
     const menuIcon = document.querySelector(".menu-icon");
     const closeIcon = document.querySelector(".close-icon");
     const slider = document.querySelector(".slider");
-    // const all = document.querySelector(".all");
+    const all = document.querySelector(".all");
 
     menuIcon.addEventListener("click", () => {
       slider.classList.add("active");
+      all.classList.add("inactive");
       console.log("clicked");
       closeIcon.classList.add("active");
     });
@@ -302,6 +303,7 @@
     closeIcon.addEventListener("click", () => {
       slider.classList.remove("active");
       closeIcon.classList.remove("active");
+      all.classList.remove("inactive");
     });
   </script>
   <script src="./js/index.js"></script>
