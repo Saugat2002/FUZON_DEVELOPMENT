@@ -295,7 +295,7 @@ main {
 .slider {
   position: absolute;
   display: flex;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   top: 0;
   left: 100%;
